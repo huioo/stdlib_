@@ -1,0 +1,275 @@
+1534751842693	geckodriver	INFO	geckodriver 0.21.0
+1534751842708	geckodriver	INFO	Listening on 127.0.0.1:52434
+1534751845726	mozrunner::runner	INFO	Running command: "D:\\Program Files (x86)\\firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\zhuto\\AppData\\Local\\Temp\\rust_mozprofile.eua15CPxVlkE"
+1534751848377	Marionette	INFO	Listening on port 52443
+1534751848472	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 17072, Chrome_ChildThread][ CWARNING: pipe errohri: 109l:d  24520, fileC z:h/rboumie_ChildThread] WARNINlGd/build/src: /pipe error: 109: file z:/build/build/src/ipc/chromium/srci/chrome/common/ipc_channel_win.cc, line p3c4/chrom6i
+um/s[rc/chrome/common/ipc_channel_win.cc, line 346
+[Ch*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+[GPU 19856, Chrome_ChildThrea
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1534751883356	geckodriver	INFO	geckodriver 0.21.0
+1534751883371	geckodriver	INFO	Listening on 127.0.0.1:52511
+1534751886384	mozrunner::runner	INFO	Running command: "D:\\Program Files (x86)\\firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\zhuto\\AppData\\Local\\Temp\\rust_mozprofile.tsCrZeTkWB49"
+1534751889114	Marionette	INFO	Listening on port 52519
+1534751889617	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: getRecipes: falling back to a synchronous message for: https://login.51job.com
+console.warn: nsLoginManager: searchLogins: `formSubmitURL` or `httpRealm` is recommended
+console.warn: LoginRecipes: getRecipes: falling back to a synchronous message for: https://login.51job.com
+console.warn: nsLoginManager: searchLogins: `formSubmitURL` or `httpRealm` is recommended
+console.warn: LoginRecipes: getRecipes: falling back to a synchronous message for: https://login.51job.com
+[GPU 12524, Chrome_ChildThread
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+52132	mozrunner::runner	INFO	Running command: "D:\\Program Files (x86)\\firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\zhuto\\AppData\\Local\\Temp\\rust_mozprofile.bL9j8c020Ovg"
+1534752054703	Marionette	INFO	Listening on port 52621
+1534752054888	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 21384, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 340, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chro[me/common/ipc_chaCnnel_win.cc, lineh 346ild 6004, Chrome_ChildTh
+read] WAR[NCING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 6004, Chrome_C[Child 14512, Chrome_Chilconsole.warn: LoginRecipes: getRecipes: falling back to a synchronous message for: https://www.51job.com
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+[Child 16608, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 16
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+ on 127.0.0.1:52982
+1534752546607	geckodriver	INFO	geckodriver 0.21.0
+1534752546622	geckodriver	INFO	Listening on 127.0.0.1:52985
+1534752549635	mozrunner::runner	INFO	Running command: "D:\\Program Files (x86)\\firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\zhuto\\AppData\\Local\\Temp\\rust_mozprofile.qpZuDK3hR61v"
+1534752552854	Marionette	INFO	Listening on port 52995
+1534752553211	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 1068, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 19120, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 19120, Chrome_ChildThread] WARNING: pipe error: 109: file z*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1534752577108	geckodriver	INFO	geckodriver 0.21.0
+1534752577121	geckodriver	INFO	Listening on 127.0.0.1:53071
+1534752580134	mozrunner::runner	INFO	Running command: "D:\\Program Files (x86)\\firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\zhuto\\AppData\\Local\\Temp\\rust_mozprofile.MEqo3GawJyBd"
+1534752582546	Marionette	INFO	Listening on port 53079
+1534752582859	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 7680, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 7680, Chrome_ChildThread] WARNING: pipe error: 109: file z:/buil[Child [GPU 9540, Chrome_ChildThread] 
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+2638463	Marionette	INFO	Listening on port 53169
+1534752638672	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 25232, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/co1534752712063	mozrunner::runner	INFO	Running command: "D:\\Program Files (x86)\\firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\zhuto\\AppData\\Local\\Temp\\rust_mozprofile.Tei8DkZwjavq"
+1534752714898	Marionette	INFO	Listening on port 53258
+1534752715304	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 16584, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Parent 16584, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 21464, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[C*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1534752915328	geckodriver	INFO	geckodriver 0.21.0
+1534752915342	geckodriver	INFO	Listening on 127.0.0.1:53334
+1534752918354	mozrunner::runner	INFO	Running command: "D:\\Program Files (x86)\\firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\zhuto\\AppData\\Local\\Temp\\rust_mozprofile.lLbJ3q4Yc4d8"
+1534752920913	Marionette	INFO	Listening on port 53344
+1534752921127	Marionette	WARN	TLS certificate errors will be ignored for this session
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransa1534753322180	mozrunner::runner	INFO	Running command: "D:\\Program Files (x86)\\firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\zhuto\\AppData\\Local\\Temp\\rust_mozprofile.sl9cO8354zIT"
+1534753324832	Marionette	INFO	Listening on port 53486
+1534753324986	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 24092, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 24092, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+[GPU 12728, Ch
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+sage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+[Child 24704, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Ch[Child 16608, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Chi[GPU 7828, Chrome_ChildThread] WA
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1534753373209	geckodriver	INFO	geckodriver 0.21.0
+1534753373225	geckodriver	INFO	Listening on 127.0.0.1:53560
+1534753376236	mozrunner::runner	INFO	Running command: "D:\\Program Files (x86)\\firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\zhuto\\AppData\\Local\\Temp\\rust_mozprofile.cmeD4BZq6ggK"
+1534753379044	Marionette	INFO	Listening on port 53569
+1534753379466	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Chil[Parent 9608, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/c1534753414547	mozrunner::runner	INFO	Running command: "D:\\Program Files (x86)\\firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\zhuto\\AppData\\Local\\Temp\\rust_mozprofile.bdSQ2WdloZVi"
+1534753417408	Marionette	INFO	Listening on port 53700
+1534753417965	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 20156, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 20156, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/c[GPU 4088, Chrome_Child
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+7993	geckodriver	INFO	geckodriver 0.21.0
+1534753478011	geckodriver	INFO	Listening on 127.0.0.1:53789
+1534753481019	mozrunner::runner	INFO	Running command: "D:\\Program Files (x86)\\firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\zhuto\\AppData\\Local\\Temp\\rust_mozprofile.RbiF9gf71lz5"
+1534753484030	Marionette	INFO	Listening on port 53797
+1534753484315	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 6160, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/com1534753604766	mozrunner::runner	INFO	Running command: "D:\\Program Files (x86)\\firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\zhuto\\AppData\\Local\\Temp\\rust_mozprofile.yeNy6vtyywTs"
+1534753607617	Marionette	INFO	Listening on port 53880
+1534753608117	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 25048, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/co1534753655539	mozrunner::runner	INFO	Running command: "D:\\Program Files (x86)\\firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\zhuto\\AppData\\Local\\Temp\\rust_mozprofile.MKc0mIIZasMd"
+1534753658047	Marionette	INFO	Listening on port 53967
+1534753658266	Marionette	WARN	TLS certificate errors will be ignored for this session
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer1534754007132	mozrunner::runner	INFO	Running command: "D:\\Program Files (x86)\\firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\zhuto\\AppData\\Local\\Temp\\rust_mozprofile.RR1wQU5ZZr9U"
+1534754009824	Marionette	INFO	Listening on port 54096
+1534754009975	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://devtools/shared/base-loader.js -> resource://devtools/server/actors/highlighters/box-model.js, line 416: TypeError: quads is undefined
+[IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler retu1534754389933	mozrunner::runner	INFO	Running command: "D:\\Program Files (x86)\\firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\zhuto\\AppData\\Local\\Temp\\rust_mozprofile.nu6o3ptmwdOt"
+1534754392745	Marionette	INFO	Listening on port 54524
+1534754393248	Marionette	WARN	TLS certificate errors will be ignored for this session
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+[Child 23956, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child [Child 14532, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[C
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+cjPyY05l4O"
+1534755018981	Marionette	INFO	Listening on port 54818
+1534755019147	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 25244, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[C[Ch
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+ild 9820, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 9820, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_chan[Child 19360, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[C*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+[GPU 13800, Chrom
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1534755031972	geckodriver	INFO	geckodriver 0.21.0
+1534755031987	geckodriver	INFO	Listening on 127.0.0.1:54901
+1534755034998	mozrunner::runner	INFO	Running command: "D:\\Program Files (x86)\\firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\zhuto\\AppData\\Local\\Temp\\rust_mozprofile.8RR8xDbWRbZ1"
+1534755037519	Marionette	INFO	Listening on port 54909
+1534755037733	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 25228, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/commo1534755079618	mozrunner::runner	INFO	Running command: "D:\\Program Files (x86)\\firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\zhuto\\AppData\\Local\\Temp\\rust_mozprofile.BL2ZZJRe3Ag4"
+1534755082103	Marionette	INFO	Listening on port 55008
+1534755082366	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 924, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 21920, Chrome_ChildThread] WARNING: pipe [error: 109: file zC:hild 1352, Chrome_ChildThread] WARNING: pipe er/rbor: 1u0i9l: file z:/build/buid/build/src/ipcl/dch/src/ipc/chromium/rsomiurc/chromm/e/common/ipc_channel_win.cc, slricn/ech r3o46m
+e/common/ipc_channel_w[in.cc, line 346
+[Child 21920, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+r this session
+[Child 11220, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 11220, Chrome_ChildThread] WARNING: pipe error[Child 9624, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 9624, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, lin[Child 24748, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/1534755290998	mozrunner::runner	INFO	Running command: "D:\\Program Files (x86)\\firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\zhuto\\AppData\\Local\\Temp\\rust_mozprofile.3uMIJTS6c7cn"
+1534755294019	Marionette	INFO	Listening on port 55333
+1534755294234	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 25508, Chrome_ChildThread] WARNING[:Child 6236, C hpriopmee _Chielrdror: 109: file z:/build/build/src/ipc/chroTmium/src/chrome/common/hirpead] WARNING:c_channel_win.cc, line 346 
+pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346[
+Child 25508, Chrome_ChildThread] WARNING: pi[pChild 6236, Chrome_ChildThread] WARNING: epipe error: 10 9: file z:/build/build/src/ipc/chromium/src/cherrror: 109: file z:/build/build/srco/ipc/chromium/src/chrome/common/ipc_channel_wime/common/ip[GPU 17656, Chrome_ChildThread] WARNING: pipe error: 109: file z:/b
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
