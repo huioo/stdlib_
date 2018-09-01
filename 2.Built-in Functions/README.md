@@ -10,11 +10,11 @@ Python解释器有一些总是可用的内建函数和类型。它们按字母�
 | [ascii()](#ascii) | enumerate() | input() | oct() | staticmethod() |
 | [bin()](#bin) | eval() | int() | open() | str() |
 | [bool()](#bool) | exec() | isinstance() | ord() | sum() |
-| bytearray() | filter() | issubclass() | pow() | super() |
-| bytes() | float() | iter() | print() | tuple() |
-| callable() | format() | len() | property() | type() |
-| chr() | frozenset() | list() | range() | vars() |
-| classmethod() | getattr() | locals() | repr() | zip() |
+| [bytearray()](#bytearray) | filter() | issubclass() | pow() | super() |
+| [bytes()](#bytes) | float() | iter() | print() | tuple() |
+| [callable()](#callable) | format() | len() | property() | type() |
+| [chr()](#chr) | frozenset() | list() | range() | vars() |
+| [classmethod()](#@classmethod) | getattr() | locals() | repr() | zip() |
 | compile() | globals() | map() | reversed() | __import__() |
 | complex() | hasattr() | max() | round() |   |
 | delattr() | hash() | memoryview() | set() |   |
@@ -120,3 +120,26 @@ class bytearray([source[, encoding[, errors]]]): 返回一个新字节数组。b
 
 在没有参数的情况下，创建了大小为0的数组。
 另请查阅[Binary Sequence Types — bytes, bytearray, memoryview](https://docs.python.org/3.6/library/stdtypes.html#binaryseq)和[Bytearray Objects](https://docs.python.org/3.6/library/stdtypes.html#typebytearray)
+
+# bytes
+ class bytes([source[, encoding[, errors]]]): 返回一个新的“bytes”对象，它是一个不变的整数序列，整数范围为0<=x<256。bytes是一个不可变版本的bytearray —— 它有相同的非可变的方法和相同的索引和切片行为。
+
+因此，构造器参数被解释bytearray()。
+
+字节对象也可以用字母创建，查看[String and Bytes literals](https://docs.python.org/3.6/reference/lexical_analysis.html#strings)
+
+另请查阅[Binary Sequence Types — bytes, bytearray, memoryview](https://docs.python.org/3.6/library/stdtypes.html#binaryseq)和[Bytearray Objects](https://docs.python.org/3.6/library/stdtypes.html#typebytearray)
+
+# callable
+callable(object): 返回True假如对象参数看起来可被调用，假如不行则False。假如这返回true，它仍然可能是调用失败，但是假如它是false，调用object将从不会成功。
+注意，类是可调用的（调用一个类返回一个新实例）；假如它们的类有一个__call__()方法，实例是可调用的。
+
+New in version 3.2: This function was first removed in Python 3.0 and then brought back in Python 3.2.
+
+# chr
+chr(i): 返回代表一个字符的字符串，它的Unicode编码点是整数i。例如，chr(97)返回字符串'a', 然而chr(8364)返回字符串'€'。这与ord()是相反的。
+
+参数的有效范围是从0到1,114,111(基于16进制的0x10FFFF)。
+
+# @classmethod
+@classmethod: 
