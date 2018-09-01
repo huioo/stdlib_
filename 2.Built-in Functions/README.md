@@ -4,7 +4,7 @@ Python解释器有一些总是可用的内建函数和类型。它们按字母�
 
 |  |  Built-in|  | Functions |  |
 | :---: | :---: | :---: | :---: | :---: |
-| [abs()](#abs) | dict() | help() | min() | setattr() |
+| [abs()](#abs(x)) | dict() | help() | min() | setattr() |
 | all() | dir() | hex() | next() | slice() |
 | any() | divmod() | id() | object() | sorted() |
 | ascii() | enumerate() | input() | oct() | staticmethod() |
@@ -19,4 +19,18 @@ Python解释器有一些总是可用的内建函数和类型。它们按字母�
 | complex() | hasattr() | max() | round() |   |
 | delattr() | hash() | memoryview() | set() |   |
 
-# abs
+# abs(x)
+返回一个数字的绝对值。参数可以是一个整数或浮点数。假如参数是一个复数，返回它的量级（magnitude）。
+```
+>>> a = 2+3j
+>>> abs(a)
+3.605551275463989
+>>> abs(-2)
+2
+>>> abs(-1.500)
+1.5
+```
+
+# all(iterable)
+
+
