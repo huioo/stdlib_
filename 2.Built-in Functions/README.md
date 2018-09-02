@@ -257,4 +257,25 @@ divmod(a, b): 以2个数字（非复数）作为参数，当使用整数除法�
 
 
 # enumerate
-enumerate(iterable, start=0): 
+enumerate(iterable, start=0): 返回一个enumerate对象。iterable必须是一个序列，一个[iterator](https://docs.python.org/3.6/glossary.html#term-iterator)或一些其他支持迭代的对象。
+
+由enumerate()返回的迭代对象的__next__方法返回一个元组，它包含一个计数（默认0开始）和从迭代迭代器获得的值。
+```
+>>> seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+>>> list(enumerate(seasons))
+[(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]
+>>> list(enumerate(seasons, start=1))
+[(1, 'Spring'), (2, 'Summer'), (3, 'Fall'), (4, 'Winter')]
+```
+等同于：
+```pythonstub
+def enumerate(sequence, start=0):
+    n = start
+    for elem in sequence:
+        yield n, elem
+        n += 1
+```
+
+
+
+
