@@ -216,9 +216,9 @@ delattr(object, name): 这与[setattr](#setattr)相关。参数是一个对象�
 # dir
 dir([object]): 没有参数时，返回当前本地作用域内的名字列表。有一个参数时，尝试返回该对象的有效属性列表。
 
-假如对象有一个名为[__dir__()](https://docs.python.org/3.6/reference/datamodel.html#object.__dir__)的方法，这个方法将被调用，并且必须返回属性列表。这允许实现定制[__getattr__()](https://docs.python.org/3.6/reference/datamodel.html#object.__getattr__)或[__getattribute__()](https://docs.python.org/3.6/reference/datamodel.html#object.__getattribute__)函数的对象去自定义dir()报告它们属性的方式。
+假如对象有一个名为[\_\_dir__()](https://docs.python.org/3.6/reference/datamodel.html#object.__dir__)的方法，这个方法将被调用，并且必须返回属性列表。这允许实现定制[\_\_getattr__()](https://docs.python.org/3.6/reference/datamodel.html#object.__getattr__)或[\_\_getattribute__()](https://docs.python.org/3.6/reference/datamodel.html#object.__getattribute__)函数的对象去自定义dir()报告它们属性的方式。
 
-假如对象没有提供__dir__()方法，函数尽量从对象的[__dict__](https://docs.python.org/3.6/library/stdtypes.html#object.__dict__)属性中收集信息，假如定义了，则从它的类型对象。结果列表没必要是完全的，并可能是错误的，当对象有一个定制的__getattr__()时。
+假如对象没有提供__dir__()方法，函数尽量从对象的[\_\_dict__](https://docs.python.org/3.6/library/stdtypes.html#object.__dict__)属性中收集信息，假如定义了，则从它的类型对象。结果列表没必要是完全的，并可能是错误的，当对象有一个定制的__getattr__()时。
 
 默认的dir()原理在不同的类型的对象中表现不同，因为它试图产生最相关的，而不是完全的信息。
 + 假如对象是一个模块对象，列表包含模块属性的名字。 
@@ -276,10 +276,10 @@ def enumerate(sequence, start=0):
         n += 1
 ```
 
-#  eval
+# eval
 eval(expression, globals=None, locals=None): 参数是一个字符串和可选的全局和本地变量。假如提供，globals必须是一个字典。假如提供，locals可以是任何mapping对象。
 
-表达式参数被解析和评估为Python表达式（从技术上讲，一个条件列表）进行评估，它使用globals和locals字典作为全局和本地命名空间。假如globals参数存在，且不包含键`__builtins__`的值，在表达式被解析之前，对内置模块[builtins](https://docs.python.org/3.6/library/builtins.html#module-builtins)的引用被插入到那个键下。
+expression参数被解析和评估为Python表达式（从技术上讲，一个条件列表）进行评估，它使用globals和locals字典作为全局和本地命名空间。假如globals参数存在，且不包含键`__builtins__`的值，在表达式被解析之前，对内置模块[builtins](https://docs.python.org/3.6/library/builtins.html#module-builtins)的引用被插入到那个键下。
 这意味着表达式通常可以完全访问到标准builtins模块，且受限的环境中传播。假如locals字典被省略，它默认是globals字典。假如两个字典都被省略，表达式在调用eval()的环境中被执行。返回值时评估的表达式的结果。语法错误被报告为异常，例如：
 ```
 >>> x = 1
@@ -302,6 +302,16 @@ exec(object[, globals[, locals]]): 这函数支持Python代码的动态执行。
 假如exec得到2个单独的对象作为globals和locals，代码将被执行，就好像它被嵌入到一个类定义中一样。
 
 假如globals字典不包含键__builtins__的值，对内置模块builtins的引用被插入到那个键下。通过这种方式，在你可以通过插入你自己的`__builtins__`字典到globals中来控制builtins对执行代码的可用性，之后传递它给exec()。
+```python
+>>> class C:
+...     pass
+... 
+>>> eval('C()')
+<C object at 0x0000025449A86CF8>
+>>> exec('a=C()')
+>>> a
+<C object at 0x0000025449A867B8>
+```
 
 **Note** The built-in functions globals() and locals() return the current global and local dictionary, respectively, which may be useful to pass around for use as the second and third argument to exec().
 
@@ -353,7 +363,7 @@ format_spec的解释取决于值参数的类型。无论如何，有一个标准
 
 默认format_spec是一个空字符串，这通常会产生与调用str(value)相同的效果。
 
-`format(value, format_spec)`的调用被解释为`type(value).__format__(value, format_spec)`，当搜索值的[__format__()](https://docs.python.org/3.6/reference/datamodel.html#object.__format__)方法时，它会绕过实例字典。
+`format(value, format_spec)`的调用被解释为`type(value).__format__(value, format_spec)`，当搜索值的[\_\_format__()](https://docs.python.org/3.6/reference/datamodel.html#object.__format__)方法时，它会绕过实例字典。
 如果方法查找到object，且format_spec非空，TypeError异常被抛出，或如果format_spec或返回值不是空字符串时。
 ```
 >>> class A:
@@ -379,7 +389,7 @@ Traceback (most recent call last):
   File "<input>", line 1, in <module>
 TypeError: unsupported format string passed to object.__format__
 ```
-Changed in version 3.4: object().__format__(format_spec) raises TypeError if format_spec is not an empty string.
+Changed in version 3.4: object().\_\_format__(format_spec) raises TypeError if format_spec is not an empty string.
 
 # frozenset
 class frozenset([iterable]): 返回一个新的frozenset对象，可选地使用可迭代的元素。frozenset是一个内置类。
@@ -453,7 +463,7 @@ input([prompt]): 如果提示参数存在，则将其写入标准输出，而不
 如果[readline](https://docs.python.org/3.6/library/readline.html#module-readline)模块被加载，那么input（）将使用它来提供精细的线编辑和历史特性。
 
 # int
-返回一个由数字或字符串`x`组成的整数对象，如果没有参数，则返回`0`。如果x定义了[__int__()](https://docs.python.org/3.6/reference/datamodel.html#object.__int__)，`int(x)`返回`x.__int__()`。如果x定义[__trunc__()](https://docs.python.org/3.6/reference/datamodel.html#object.__trunc__)，它返回`x.__trunc__()`。对于浮点数，这向零截断。
+返回一个由数字或字符串`x`组成的整数对象，如果没有参数，则返回`0`。如果x定义了[\_\_int__()](https://docs.python.org/3.6/reference/datamodel.html#object.__int__)，`int(x)`返回`x.__int__()`。如果x定义[\_\_trunc__()](https://docs.python.org/3.6/reference/datamodel.html#object.__trunc__)，它返回`x.__trunc__()`。对于浮点数，这向零截断。
 + class int(x=0)
 + class int(x=0, base=10)
 
@@ -667,6 +677,7 @@ mode：mode是一个可选字符，它指定文件以哪个模式打开。它默
 | 't' | text mode (default) |  
 | '+' | open a disk file for updating (reading and writing) |  
 | 'U' | universal newlines mode (deprecated) | 
+
 默认的模式是‘r’（打开阅读text，‘rt’的同义词）。对于二进制读写访问，‘w+b’模式打开和把文件截成0字节（truncates the file to 0 bytes）。‘r+b’不截断（truncation）打开文件。
 
 正如在[overview](https://docs.python.org/3.6/library/io.html#io-overview)中提到的，Python区分二进制和文本输入/输出（I/O）。以二进制模式打开的文件（mode参数中包括“b”）返回内容为不进行任何解码的字节对象。在文本模式（默认情况下，或者mode参数中包含“t”），返回的文件内容为[str](https://docs.python.org/3.6/library/stdtypes.html#str)，这些字节已先被解码，通过使用平台相关的编码，或者在给定的情况下使用指定的编码。
@@ -698,8 +709,8 @@ opener：一个定制的opener可通过传一个callable作为opener来使用。
 
 The newly created file is [non-inheritable](https://docs.python.org/3.6/library/os.html#fd-inheritance).
 
-下面的例子使用os.open()函数的[dir_fd]参数来打开相对于给定目录的文件：
-```pythonstub
+下面的例子使用os.open()函数的[dir_fd](https://docs.python.org/3.6/library/os.html#dir-fd)参数来打开相对于给定目录的文件：
+```python
 >>> import os
 >>> dir_fd = os.open('somedir', os.O_RDONLY)
 >>> def opener(path, flags):
@@ -738,3 +749,196 @@ Deprecated since version 3.4, will be removed in version 4.0: The 'U' mode.
         Support added to accept objects implementing os.PathLike.
         On Windows, opening a console buffer may return a subclass of io.RawIOBase other than io.FileIO.
 
+
+# ord
+ord(c): 给定一个表示Unicode字符的字符串，返回一个表示该字符的Unicode编码点的整数。例如，`ord('a')`返回整数`97`和 `ord('€')`（欧元符号）返回`8364`。这与chr()相反。
+
+# pow
+pow(x, y[, z]): 返回x的y幂次方；如果z存在，返回x的y幂次方，除z取模（比计算`pow(x, y) % z`更有效）。`pow(x, y)`2个参数等同于使用幂次方操作符：x**y。
+
+参数必须是数学类型。混合操作数类型，对二进制算术运算符的强制规则适用。对于int操作对象，结果与操作数相同（在强制之后），除非第二个参数为负;在这种情况下，所有的参数都被转换为浮点数，并交付浮动结果。例如，`10**2`返回100，但是`10**-2`返回0.01。如果第二个参数为负，则必须省略第三个参数。如果z是存在的，那么x和y必须是整数类型，而y必须是非负的。
+
+# print
+print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
+
+将objects打印到文本流file中，由sep分离，然后是end。如果存在sep、end、file和flush，则必须以关键字参数的形式给出。
+
+所有非关键字形式参数都被转换成字符串，像str()所做的那样，并写入到流中，由sep分隔和最后跟着end。sep和end两者都必须是字符串；它们也可以是None，这意味着使用默认值。如果没有给定objects，print()将只会写入`end`。
+
+file参数必须是一个有`write(string)`方法对象；如果它不存在或为None，[sys.stdout](https://docs.python.org/3.6/library/sys.html#sys.stdout)将被使用。由于打印的参数被转换成文本字符串，所以print()不能与二进制模式文件对象一起使用。对于这些，使用`file.write(...)`代替。
+
+输出是否被缓冲通常由file决定，但是如果flush关键字参数是true，the stream is forcibly(强制) flushed_。
+
+Changed in version 3.3: Added the flush keyword argument.
+
+# property
+class property(fget=None, fset=None, fdel=None, doc=None): 返回一个property属性。
+
+fget是一个用来获取一个属性值的函数。fset是一个用来设置一个属性值的函数。fdef是一个用来删除属性值的方法。且doc创建一个属性的docstring。
+
+一个典型的用法是来定义一个被管理的属性x：
+```python
+class C:
+    def __init__(self):
+        self._x = None
+
+    def getx(self):
+        return self._x
+
+    def setx(self, value):
+        self._x = value
+
+    def delx(self):
+        del self._x
+
+    """ 
+    >>> type(C.x)
+    <class 'property'>
+    """
+    x = property(getx, setx, delx, "I'm the 'x' property.")
+```
+如果c是C的实例，`c.x`将调用获取方法（getter），`c.x=value`将调用设置方法（setter），且`del c.x`将调用删除方法（deleter）。
+
+如果给定了，doc将是这个性质属性的docstring。否则，property将复制`fget`的docstring（如果它存在的话）。这使得可以很容易地创建只读属性，通过使用`property()`作为一个装饰器（[decorator](https://docs.python.org/3.6/glossary.html#term-decorator)）。
+```python
+class Parrot:
+    def __init__(self):
+        self._voltage = 100000
+
+    @property
+    def voltage(self):
+        """Get the current voltage.
+        
+        >>> type(Parrot.voltage)
+        <class 'property'>
+        """
+        return self._voltage
+```
+`@property`装饰器将`voltage()`方法变成一个`具有相同名字`的只读属性的“getter”，并且它设置voltage的docstring为“Get the current voltage.”。
+
+一个property对象拥可使用装饰器的 `getter`, `setter` 和 `deleter` 方法，装饰器创建property的副本，并将相应的存取器函数设置到被装饰的函数，最好用一个例子来解释：
+```python
+class C:
+    def __init__(self):
+        self._x = None
+
+    @property
+    def x(self):
+        """I'm the 'x' property."""
+        return self._x
+
+    @x.setter
+    def x(self, value):
+        self._x = value
+
+    @x.deleter
+    def x(self):
+        del self._x
+```
+这段代码恰好等同于第一个例子。一定要赋予额外的函数与原始属性相同的名称（在本例中为x）
+
+返回的property对象也有属性`fget`, `fset` 和 `fdel`，对应于构造函数参数。
+
+Changed in version 3.5: The docstrings of property objects are now writeable.
+
+# range
+
+range事实上是一个不可变的序列类型，而不是一个函数，记录在[Ranges](https://docs.python.org/3.6/library/stdtypes.html#typesseq-range)和[Sequence Types — list, tuple, range](https://docs.python.org/3.6/library/stdtypes.html#typesseq)。
++ class range(stop)
++ class range(start, stop[, step])
+
+# repr
+repr(object): 返回一个字符串，它含有一个可打印表现的对象。
+
+对许多的类型来说，这个方法试图返回一个字符串，当他被传给eval()时，这将会产生一个具有相同值的对象，否则的话，表示是一个用尖括号括起来的字符串，它包含对象类型的名称和附加的信息，通常包括对象的名称和地址。通过定义一个[\_\_repr__()](https://docs.python.org/3.6/reference/datamodel.html#object.__repr__)方法，一个类可以控制这个函数返回对于其实例的内容。
+
+# reversed
+reversed(seq): 返回一个相反的序列。seq必须是一个对象，它有[\_\_reversed__()](https://docs.python.org/3.6/reference/datamodel.html#object.__reversed__)方法或支持序列协议(有从0开始的整数参数的__len__()方法和__getitrm__()方法)。
+
+# round
+round(number[, ndigits]): 返回小数点后ndigits精度的四舍五入的数字。假如ndigits被省略或为None，它返回它输入的最近的整数（`it returns the nearest integer to its input.`）。
+
+对于支持round()的内置类型，值被四舍五入到最接近10的ndigits负幂次方的倍数（multiple）；如果两边的倍数距离都相等，四舍五入偏向于选择偶数（例如，`round(0.5)` 和 `round(-0.5)` 两者都是 0，且`round(1.5)`是2）。
+> For the built-in types supporting round(), values are rounded to the closest multiple of 10 to the power minus ndigits; if two multiples are equally close, rounding is done toward the even choice (so, for example, both round(0.5) and round(-0.5) are 0, and round(1.5) is 2).
+```python
+>>> round(0.5), round(-0.5), round(1.5)   # 当出现.5的时候，两边的距离都一样，取最近的偶数
+(0, 0, 2)
+>>> round(1023, -2)
+1000
+>>> round(1023.1234, 2)
+1023.12
+
+```
+任何整数值对于ndigits是有效的（整数，0或负数）。如果ndigits被省略或为None，返回值是一个整数。否则返回值和number类型相同。
+
+对于一般的Python对象`number`，`round`代表`number.__round__`。
+
+**注意** 对于浮点数的`round()`的行为是令人惊奇的。例如，`round(2.675, 2)`得到`2.67`代替了期望的`2.68`，这不是一个bug。这是由于大多数小数部分不能完全表示为浮点数。为了更多信息，查看[Floating Point Arithmetic: Issues and Limitations](https://docs.python.org/3.6/tutorial/floatingpoint.html#tut-fp-issues)。
+
+# set
+class set([iterable]): 返回一个新的set对象，可选的元素从iterable中获取。set是内置类，为了更多关于这个类的信息，查看[set](https://docs.python.org/3.6/library/stdtypes.html#set)和[Set Types — set, frozenset](https://docs.python.org/3.6/library/stdtypes.html#types-set)。
+
+For other containers see the built-in frozenset, list, tuple, and dict classes, as well as the collections module.
+
+# setattr
+setattr(object, name, value): 这是getattr()的相似物。参数是一个对象、一个字符串和一个任意的值。字符串可能会命名一个已有的属性或一个新属性。函数将值赋给属性，只要对象允许。例如，`setattr(x, 'foobar', 123)`等同于`x.foobar = 123`。
+
+# slice
+返回一个slice对象，它表示由`range(start, stop, step)`指定的索引集合。start和step默认为None。slice对象有只读的数据属性`start`、`stop`和`step`，这仅仅返回参数的值（或它们的默认值）。它们没有其他特定的功能；但是它们是由Numerical Python和其他第三方扩展所使用的。当使用扩展的索引语法时，也会生成切片对象。例如：`a[start:stop:step]`或`a[start:stop, i]`。请参阅[itertools.islice()](https://docs.python.org/3.6/library/itertools.html#itertools.islice)，以获得一个返回迭代器的备用版本。
+- class slice(stop)
+- class slice(start, stop[, step])
+
+# sorted
+sorted(iterable, *, key=None, reverse=False): 从iterable的项目中返回一个新的排序列表。
+
+有两个可选的参数，必须指定为关键字参数。
+
+key 指定一个参数的函数，它被用来从每个列表元素中提取一个比较键：`key=str.lower`。默认值是None（直接比较元素）。
+
+reverse 是一个布尔值。如果它设为`True`，然后，列表元素被排序，就好像每个比较都被颠倒了一样。
+
+使用[functools.cmp_to_key()](https://docs.python.org/3.6/library/functools.html#functools.cmp_to_key)将旧式的cmp函数转换为一个key函数。
+
+内置的sorted()函数保证是稳定的。如果它保证不改变比较相等的元素的相对顺序，排序是稳定的 —— 这有助于在多个传递中进行排序（例如，按部门排序，然后按工资等级排序）。
+
+对于排序示例和一个简短的排序教程，查看[ Sorting HOW TO ](https://docs.python.org/3.6/howto/sorting.html#sortinghowto)。
+
+# staticmethod
+@staticmethod: 将一个方法转变为静态方法。
+
+静态方法不接受隐式的第一个参数。要声明一个静态方法，请使用这个习语：
+```python
+class C:
+    @staticmethod
+    def f(arg1, arg2, ...): ...
+```
+
+`@staticmethod`的形式是一个函数装饰器 —— 查看在[Function definitions](https://docs.python.org/3.6/reference/compound_stmts.html#function)中的函数定义描述的细节。
+
+它可以在类上调用（例如 `C.f()`），也可以在实例上调用（ 例如`C().f()`）。除了它的类之外，该实例被忽略。
+
+Python中的静态方法与在Java或C++中发现的方法类似。也请参阅[classmethod()](https://docs.python.org/3.6/library/functions.html#classmethod)，以获得对创建备用类构造函数有用的变体。
+
+像所有的decorator一样，也可以将staticmethod称为常规函数，且用它的结果做点什么。这在某些情况下你需要来自类主体中函数的引用，这是需要的。你想要避免自动转换到实例方法。对于这些案例，使用这个习语：
+```python
+class C:
+    builtin_open = staticmethod(open)
+```
+要了解更多关于静态方法的信息，请参考[The standard type hierarchy](https://docs.python.org/3.6/reference/datamodel.html#types)中的标准类型层次结构的文档。
+
+# str
+返回object的str版本。对于细节，查看[str()](https://docs.python.org/3.6/library/stdtypes.html#str)。
+- class str(object='')
+- class str(object=b'', encoding='utf-8', errors='strict')
+
+str is the built-in string class. For general information about strings, see Text Sequence Type — str.
+
+# sum
+sum(iterable[, start]): 计算start和iterable从左到右的项的总合，并返回总数。
+
+start默认是0。iterable的项通常是数字，start值不允许是字符串。
+
+对于某些用例来说，sum()有很好的替代方法。连接字符串序列的首选、快速方法是通过调用`''.join(sequence)`。为了增加浮点值的精度，查看[math.fsum()](https://docs.python.org/3.6/library/math.html#math.fsum)。要连接一系列的iterables，可以考虑使用[itertools.chain()](https://docs.python.org/3.6/library/itertools.html#itertools.chain)。
+
+# super
+super([type[, object-or-type]]): 
