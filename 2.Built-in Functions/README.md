@@ -4,20 +4,20 @@ Python解释器有一些总是可用的内建函数和类型。它们按字母�
 
 |  |  Built-in|  | Functions |  |
 | :---: | :---: | :---: | :---: | :---: |
-| [abs()](#abs) | [dict()](#dict) | [help()](#help) | min() | setattr() |
-| [all()](#all) | [dir()](#dir) | [hex()](#hex) | next() | slice() |
-| [any()](#any) | [divmod()](#divmod) | [id()](#id) | object() | sorted() |
-| [ascii()](#ascii) | [enumerate()](#enumerate) | [input()](#input) | oct() | staticmethod() |
-| [bin()](#bin) | [eval()](#eval) | [int()](#int) | open() | str() |
+| [abs()](#abs) | [dict()](#dict) | [help()](#help) | [min()](#min) | setattr() |
+| [all()](#all) | [dir()](#dir) | [hex()](#hex) | [next()](#next) | slice() |
+| [any()](#any) | [divmod()](#divmod) | [id()](#id) | [object()](#object) | sorted() |
+| [ascii()](#ascii) | [enumerate()](#enumerate) | [input()](#input) | [oct()](#oct) | staticmethod() |
+| [bin()](#bin) | [eval()](#eval) | [int()](#int) | [open()](#open) | str() |
 | [bool()](#bool) | [exec()](#exec) | [isinstance()](#isinstance) | ord() | sum() |
 | [bytearray()](#bytearray) | [filter()](#filter) | [issubclass()](#issubclass) | pow() | super() |
 | [bytes()](#bytes) | [float()](#float) | [iter()](#iter) | print() | tuple() |
 | [callable()](#callable) | [format()](#format) | [len()](#len) | property() | type() |
 | [chr()](#chr) | [frozenset()](#forzenset) | [list()](#list) | range() | vars() |
 | [classmethod()](#classmethod) | [getattr()](#getattr) | [locals()](#locals) | repr() | zip() |
-| [compile()](#compile) | [globals()](#globals) | map() | reversed() | __import__() |
-| [complex()](#complex) | [hasattr()](#hasattr) | max() | round() |   |
-| [delattr()](#delattr) | [hash()](#hash) | memoryview() | set() |   |
+| [compile()](#compile) | [globals()](#globals) | [map()](#map) | reversed() | \_\_import__() |
+| [complex()](#complex) | [hasattr()](#hasattr) | [max()](#max) | round() |   |
+| [delattr()](#delattr) | [hash()](#hash) | [memoryview()](#memoryview) | set() |   |
 
 # abs
 abs(x): 返回一个数字的绝对值。参数可以是一个整数或浮点数。假如参数是一个复数，返回它的量级（magnitude）。
@@ -564,3 +564,177 @@ class list([iterable]): 事实上[list](https://docs.python.org/3.6/library/stdt
 locals(): 更新和返回一个字典，其表示当前本地符号表。当在函数块中调用locals()时，由locals()返回自由变量，而不是在类块中。
 
 **注意** 这个字典的内容不应该被修改，更改可能不会影响解释器使用的本地和自由变量的值。
+
+# map
+map(function, iterable, ...): 返回一个迭代器，该迭代器将function应用于iterable的每一项，yielding结果。
+
+假如额外的iterable参数被传递，function必须取多个参数，并且并行地被应用于所有迭代器的items。
+有了多个迭代器，迭代器会在最短的迭代器被耗尽时停止。对于函数输入已经被安排成参数元组的情况，查看 [itertools.starmap()](https://docs.python.org/3.6/library/itertools.html#itertools.starmap)。
+```
+>>> list(map(lambda x: 2*x,[1,2,3]))
+[2, 4, 6]
+>>> list(map(lambda x,y: x+y,[1,2,3], [4,5]))
+[5, 7]
+>>> list(map(lambda x,y: x+y,[1,2,3], [4,5,6]))
+[5, 7, 9]
+
+>>> list(map(lambda x: 2*x,[1,2,3],[4,5]))
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+TypeError: <lambda>() takes 1 positional argument but 2 were given
+```
+
+# max
+返回一个可迭代器里最大的item，或者2个或更多的参数最大的。
++ max(iterable, *[, key, default])
++ max(arg1, arg2, *args[, key])
+
+如果提供了一个位置的参数，它应该是一个[iterable](https://docs.python.org/3.6/glossary.html#term-iterable)。iterable中最大的一项被返回。假如2个或更多的位置参数(positional arguments)被提供，返回最大的位置参数。
+
+有2个可选的关键字参数。key参数指定一个参数的排序方法，就像list.sort()的使用。default参数指定要返回的对象，如果提供的iterable为空的话。假如iterbale为空且没有提供default，ValueError将被抛出。
+```
+>>> max(1,2,3,4,key=lambda x: x%4)
+3
+>>> max([1,2],[0,3],key=lambda x: x[1])
+[0, 3]
+>>> max([1,2],[0,3])
+[1, 2]
+```
+如果多个items是最大值，函数范围第一个遇到的。这与其他稳定排序的保存工具是一致的，如`sorted(iterable, key=keyfunc, reverse=True)[0]` 和 `heapq.nlargest(1, iterable, key=keyfunc)`。
+
+New in version 3.4: The default keyword-only argument.
+
+# memoryview
+memoryview(obj): 返回一个“内存试图”对象，它由给定的参数创建。有关更多信息，请参见[Memory Views](https://docs.python.org/3.6/library/stdtypes.html#typememoryview)。 
+
+# min
+返回一个iterable中最小的项或最小的两个或更多的参数中最小的。
+
++ min(iterable, *[, key, default])
++ min(arg1, arg2, *args[, key])
+
+如果提供了一个位置的参数，它应该是一个[iterable](https://docs.python.org/3.6/glossary.html#term-iterable)。iterable中最小的一项被返回。假如2个或更多的位置参数(positional arguments)被提供，返回最小的位置参数。
+
+有2个可选的关键字参数。key参数指定一个参数的排序方法，就像list.sort()的使用。default参数指定要返回的对象，如果提供的iterable为空的话。假如iterbale为空且没有提供default，ValueError将被抛出。
+
+如果多个items是最小值，函数范围第一个遇到的。这与其他稳定排序的保存工具是一致的，如`sorted(iterable, key=keyfunc)[0]` 和 `heapq.nsmallest(1, iterable, key=keyfunc)`。
+
+New in version 3.4: The default keyword-only argument.
+
+# next
+next(iterator[, default]): 从iterator调用它的__next__()方法，获取下一个item。如果给定default，如果iterator耗尽了，它将被返回，否则，StopIteration被抛出。
+
+# object
+class object: 返回一个没有特征的对象。[object](https://docs.python.org/3.6/library/functions.html#object)是所有class的基础。它有对所有Python类实例都通用的方法。这个函数不接受任何参数。
+
+**注意** object没有一个__dict__，所以你不能给object类的实例分配任意属性。
+
+# oct
+oct(x): 将一个整数转换成前缀为“0o”的8进制字符。结果是一个有效的Python表达式。假如x不是一个Python int对象，它必须定义一个__index__()方法，它返回一个整数。例如：
+```
+>>> oct(8)
+'0o10'
+>>> oct(-56)
+'-0o70'
+```
+假如你想将一个整数转换成8进制字符，要么前缀是“0o”要么不是，你可以使用下面方式的一种：
+```
+>>> '%#o' % 10, '%o' % 10
+('0o12', '12')
+>>> format(10, '#o'), format(10, 'o')
+('0o12', '12')
+>>> f'{10:#o}', f'{10:o}'
+('0o12', '12')
+```
+See also format() for more information.
+
+# open
+open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)
+
+打开文件并返回一个相应的file object。若果文件不能被打开，OSError被抛出。
+
+file：file是一个[path-like object](https://docs.python.org/3.6/glossary.html#term-path-like-object)，它给定被打开的文件的pathname（绝对或相对当前工作目录），或者被包装的文件的整型文件描述符。（如果给定一个文件描述符 ，当返回的I/O对象被关闭时，它将被关闭，除非closefd被设置为false。）
+
+mode：mode是一个可选字符，它指定文件以哪个模式打开。它默认是‘r’，这意味着以文本模式打开阅读。其他常见的值是‘w’写（如果文件已经存在，则截断该文件），‘x’为专有创造，‘a’为附加（在一些Unix系统中，这意味着*all writes*添加到文件末尾，而不管当前的查找位置是什么）。在text模式，如果没有指定encoding，使用的encoding依赖于平台（platform）：`locale.getpreferredencoding(False)`被调用来获取当前本地的encoding。（对于读写原始字节（raw butes），使用binary模式，且允许不指定编码）。可用的模式是：  
+
+| Character | Meaning |
+| :--- | :--- |
+| 'r' | open for reading (default) |  
+| 'w' | open for writing, truncating the file first |  
+| 'x' | open for exclusive creation, failing if the file already exists |  
+| 'a' | open for writing, appending to the end of the file if it exists |  
+| 'b' | binary mode |  
+| 't' | text mode (default) |  
+| '+' | open a disk file for updating (reading and writing) |  
+| 'U' | universal newlines mode (deprecated) | 
+默认的模式是‘r’（打开阅读text，‘rt’的同义词）。对于二进制读写访问，‘w+b’模式打开和把文件截成0字节（truncates the file to 0 bytes）。‘r+b’不截断（truncation）打开文件。
+
+正如在[overview](https://docs.python.org/3.6/library/io.html#io-overview)中提到的，Python区分二进制和文本输入/输出（I/O）。以二进制模式打开的文件（mode参数中包括“b”）返回内容为不进行任何解码的字节对象。在文本模式（默认情况下，或者mode参数中包含“t”），返回的文件内容为[str](https://docs.python.org/3.6/library/stdtypes.html#str)，这些字节已先被解码，通过使用平台相关的编码，或者在给定的情况下使用指定的编码。
+
+**注意** Python并不依赖于底层操作系统的文本文件概念；有的处理都是由Python本身完成的，因此是独立于平台的。
+
+buffering：buffering是一个可选的整数，它被用来设置缓冲策略。传0来选择关闭缓冲（只在二进制模式中允许），传1来选择行缓冲（只在文本模式有用），和传大于1的整数来表示一个固定缓冲区的字节大小。当没有给定buffering参数，默认的缓冲策略如下：
+- 二进制文件以固定大小的块进行缓冲；缓冲区的大小是使用启发式方法来确定底层设备的“块大小”，然后返回到[ io.DEFAULT_BUFFER_SIZE](https://docs.python.org/3.6/library/io.html#io.DEFAULT_BUFFER_SIZE)。在许多系统中，缓冲区通常为4096或8192字节长。
+- “互动”的文本文件（[isatty()](https://docs.python.org/3.6/library/io.html#io.IOBase.isatty)返回`True`的文件）使用行缓冲。其他的文本文件使用上面描述的二进制文件的策略。
+
+encoding：encoding是用来解码或编码文件的编码的名称。这只应该在文本模式中使用。默认的编码是平台相关的（无论locale.getpreferredencoding()返回什么），但是Python支持的任何文本编码都可以使用。对于支持的编码列表，查看[codecs](https://docs.python.org/3.6/library/codecs.html#module-codecs)模块
+
+error：error是可选字符，它指定如何解决编码和解码错误——这可能用在二进制模式。有各种标准错误处理程序可用(被列在[Error Handlers](https://docs.python.org/3.6/library/codecs.html#error-handlers))，尽管在 [codecs.register_error()](https://docs.python.org/3.6/library/codecs.html#codecs.register_error) 中注册的任何错误处理名称都是有效的。标准名称包括：
+- 如果有一个编码错误，`strict`用于产生一个ValueError异常。默认值None有相同的作用。
+- `ignore`忽略错误。注意，忽略编码错误可能导致数据丢失。
+- `replace`会引起一个替换标记（如“？”）被插入在有错误数据的地方。
+- `surrogateescape`将任何不正确的字节表示为代码点，使用范围是从`U+DC80`到`U+DCFF`的Unicode私有使用区域（Unicode Private Use Area）。当`surrogateescape`错误处理器被用在写入数据时，这些私有代码点将被转换成相同的字节。
+- `surrogateescape`只支持在写入文件时。编码不支持的字符被替换为适当的XML字符，参考`&#nnn`。
+- `backslashreplace`用Python的反斜杠转义序列替换错误的数据。
+- `namereplace`（也只在写入时支持）用`\N{...}`转义序列代替不支持的字符。
+
+newline: newline控制 [universal newlines](https://docs.python.org/3.6/glossary.html#term-universal-newlines)模式是如何工作的（它只应用在文本模式）。它可以为`None`、`''`、`'\n'`、`'\r'` 和 `'\r\n'`。它工作如下：
+- 当从流（stream）中读取输入时，如果newline是`None`，普通换行模式生效。输入中的行可以以`'\n'`、`'\r'` 和 `'\r\n'`作为结尾，并在返回给访问者之前，它们被翻译为`'\n'`。如果它是`''`，普通换行模式生效，但是返回给访问者的行结束符没有被翻译。如果它是其它的合法值，输入行只被给定的字符串中断，并且返回给访问者的行结束符没有被翻译。
+- 当把输出写到流（stream）中时，如果newline是`None`，任何被写的`\n`字符被翻译为系统默认的行分隔符，[os.linesep](https://docs.python.org/3.6/library/os.html#os.linesep)。如果newline是`''`或`\n`，没有翻译发生。如果newline是其它任何合法的值，任何写入的`'\n'`字符被转化成给定的字符串。
+
+closefd：如果closefd是`False`，且给定一个文件描述符而不是文件名，当文件被关闭，底层文件描述符将保持打开状态。如果给定文件名，closefd必须是`True`（默认）否则一个错误将产生。
+
+opener：一个定制的opener可通过传一个callable作为opener来使用。文件对象的底层文件描述符可通过调用opener（with (file, flags)）获得。opener必须返回一个打开的文件描述符（传[os.open](https://docs.python.org/3.6/library/os.html#os.open)作为opener的结果在功能上类似于传None）。 
+
+The newly created file is [non-inheritable](https://docs.python.org/3.6/library/os.html#fd-inheritance).
+
+下面的例子使用os.open()函数的[dir_fd]参数来打开相对于给定目录的文件：
+```pythonstub
+>>> import os
+>>> dir_fd = os.open('somedir', os.O_RDONLY)
+>>> def opener(path, flags):
+...     return os.open(path, flags, dir_fd=dir_fd)
+...
+>>> with open('spamspam.txt', 'w', opener=opener) as f:
+...     print('This will be written to somedir/spamspam.txt', file=f)
+...
+>>> os.close(dir_fd)  # don't leak a file descriptor
+```
+
+由open()函数返回file object类型取决于模式。当open()被用来以文本模式('w', 'r', 'wt', 'rt'等)打开文件时，它返回一个[io.TextIOBase](https://docs.python.org/3.6/library/io.html#io.TextIOBase)的子类（特别的io.TextIOBase）。当被用来在二进制模式下用buffering打开文件时，它返回一个[io.BufferedReader](https://docs.python.org/3.6/library/io.html#io.BufferedReader)；在写入和追加二进制模式中，它返回一个[io.BufferedWriter](https://docs.python.org/3.6/library/io.html#io.BufferedWriter)，且在读写模式下，它返回[io.BufferedRandom](https://docs.python.org/3.6/library/io.html#io.BufferedRandom)。当buffering生效，原始流，[io.RawIOBase](https://docs.python.org/3.6/library/io.html#io.RawIOBase)的子类，返回[io.FileIO](https://docs.python.org/3.6/library/io.html#io.FileIO)。
+
+也可查看文件处理模块，如[fileinput](https://docs.python.org/3.6/library/fileinput.html#module-fileinput)，[io](https://docs.python.org/3.6/library/io.html#module-io)（open()声明的地方），[os](https://docs.python.org/3.6/library/os.html#module-os)，[os.path](https://docs.python.org/3.6/library/os.path.html#module-os.path)，[tempfile](https://docs.python.org/3.6/library/tempfile.html#module-tempfile) 和 [shutil](https://docs.python.org/3.6/library/shutil.html#module-shutil)。
+
+    Changed in version 3.3:
+
+        The opener parameter was added.
+        The 'x' mode was added.
+        IOError used to be raised, it is now an alias of OSError.
+        FileExistsError is now raised if the file opened in exclusive creation mode ('x') already exists.
+
+    Changed in version 3.4:
+
+        The file is now non-inheritable.
+
+Deprecated since version 3.4, will be removed in version 4.0: The 'U' mode.
+
+    Changed in version 3.5:
+
+        If the system call is interrupted and the signal handler does not raise an exception, the function now retries the system call instead of raising an InterruptedError exception (see PEP 475 for the rationale).
+        The 'namereplace' error handler was added.
+
+    Changed in version 3.6:
+
+        Support added to accept objects implementing os.PathLike.
+        On Windows, opening a console buffer may return a subclass of io.RawIOBase other than io.FileIO.
+
