@@ -4,31 +4,31 @@ Python解释器有一些总是可用的内建函数和类型。它们按字母�
 
 |  |  Built-in|  | Functions |  |
 | :---: | :---: | :---: | :---: | :---: |
-| [abs()](#abs) | [dict()](#dict) | [help()](#help) | [min()](#min) | setattr() |
-| [all()](#all) | [dir()](#dir) | [hex()](#hex) | [next()](#next) | slice() |
-| [any()](#any) | [divmod()](#divmod) | [id()](#id) | [object()](#object) | sorted() |
-| [ascii()](#ascii) | [enumerate()](#enumerate) | [input()](#input) | [oct()](#oct) | staticmethod() |
-| [bin()](#bin) | [eval()](#eval) | [int()](#int) | [open()](#open) | str() |
-| [bool()](#bool) | [exec()](#exec) | [isinstance()](#isinstance) | ord() | sum() |
-| [bytearray()](#bytearray) | [filter()](#filter) | [issubclass()](#issubclass) | pow() | super() |
-| [bytes()](#bytes) | [float()](#float) | [iter()](#iter) | print() | tuple() |
-| [callable()](#callable) | [format()](#format) | [len()](#len) | property() | type() |
-| [chr()](#chr) | [frozenset()](#forzenset) | [list()](#list) | range() | vars() |
-| [classmethod()](#classmethod) | [getattr()](#getattr) | [locals()](#locals) | repr() | zip() |
-| [compile()](#compile) | [globals()](#globals) | [map()](#map) | reversed() | \_\_import__() |
-| [complex()](#complex) | [hasattr()](#hasattr) | [max()](#max) | round() |   |
-| [delattr()](#delattr) | [hash()](#hash) | [memoryview()](#memoryview) | set() |   |
+| [abs()](#abs) | [dict()](#dict) | [help()](#help) | [min()](#min) | [setattr()](#setattr) |
+| [all()](#all) | [dir()](#dir) | [hex()](#hex) | [next()](#next) | [slice()](#slice) |
+| [any()](#any) | [divmod()](#divmod) | [id()](#id) | [object()](#object) | [sorted()](#sorted) |
+| [ascii()](#ascii) | [enumerate()](#enumerate) | [input()](#input) | [oct()](#oct) | [staticmethod()](#staticmethod) |
+| [bin()](#bin) | [eval()](#eval) | [int()](#int) | [open()](#open) | [str()](str) |
+| [bool()](#bool) | [exec()](#exec) | [isinstance()](#isinstance) | [ord()](#ord) | [sum()](#sum) |
+| [bytearray()](#bytearray) | [filter()](#filter) | [issubclass()](#issubclass) | [pow()](#pow) | [super()](#super) |
+| [bytes()](#bytes) | [float()](#float) | [iter()](#iter) | [print()](#print) | [tuple()](#tuple) |
+| [callable()](#callable) | [format()](#format) | [len()](#len) | [property()](#property) | [type()](#type) |
+| [chr()](#chr) | [frozenset()](#forzenset) | [list()](#list) | [range()](#range) | [vars()](#vasrs) |
+| [classmethod()](#classmethod) | [getattr()](#getattr) | [locals()](#locals) | [repr()](#repr) | [zip()](#zip) |
+| [compile()](#compile) | [globals()](#globals) | [map()](#map) | [reversed()](#reversed) | [\_\_import__()](#__import__) |
+| [complex()](#complex) | [hasattr()](#hasattr) | [max()](#max) | [round()](#round) |   |
+| [delattr()](#delattr) | [hash()](#hash) | [memoryview()](#memoryview) | [set()](#set) |   |
 
 # abs
 abs(x): 返回一个数字的绝对值。参数可以是一个整数或浮点数。假如参数是一个复数，返回它的量级（magnitude）。
-```ipnbpython
-In[2]: a = 2+3j
-In[3]: abs(a)
-Out[3]: 3.605551275463989
-In[4]: abs(-2)
-Out[4]: 2
-In[5]: abs(-1.500)
-Out[5]: 1.5
+```python
+>>> a = 2+3j
+>>> abs(a)
+3.605551275463989
+>>> abs(-2)
+2
+>>> abs(-1.500)
+1.5
 ```
 
 # all
@@ -54,31 +54,31 @@ def any(iterable):
 # ascii
 ascii(object): 如同repr()，返回一个包含对象的可打印表示的字符串，但是转义(escape)由repr()返回的字符串中的非ASCII字符，repr()使用\x、\u或\U转义。
 这会产生一个类似于Python 2中的repr()返回的字符串。
-```ipnbpython
-In[2]: ascii('aa')
-Out[2]: "'aa'"
-In[3]: ascii('中国')
-Out[3]: "'\\u4e2d\\u56fd'"
-In[4]: ascii(max)
-Out[4]: '<built-in function max>'
-In[5]: ascii('中国1-1')
-Out[5]: "'\\u4e2d\\u56fd1-1'"
+```python
+>>> ascii('aa')
+"'aa'"
+>>> ascii('中国')
+"'\\u4e2d\\u56fd'"
+>>> ascii(max)
+'<built-in function max>'
+>>> ascii('中国1-1')
+"'\\u4e2d\\u56fd1-1'"
 ```
 # bin
 bin(x): 转换一个整数为一个二进制字符串，前缀为“0b”。这个结果是一个有效的Python表达式。假如x不是一个Python的int对象，它必须定义一个__index__()方法，
 它返回一个一个整数，一些例子：
-```ipnbpython
-In[2]: bin(3)
-Out[2]: '0b11'
-In[3]: bin(-10)
-Out[3]: '-0b1010'
+```python
+>>> bin(3)
+'0b11'
+>>> bin(-10)
+'-0b1010'
 ```
 如果需要前缀“0b”或不需要，您可以使用以下两种方法。
-```ipnbpython
-In[2]: (format(14, '#b'), format(14, 'b'))
-Out[2]: ('0b1110', '1110')
-In[3]: (f'{14:#b}', f'{14:b}')
-Out[4]: ('0b1110', '1110')
+```python
+>>> (format(14, '#b'), format(14, 'b'))
+('0b1110', '1110')
+>>> (f'{14:#b}', f'{14:b}')
+('0b1110', '1110')
 ```
 另请参阅[format()](#format)，以获取更多的信息。
 
@@ -86,9 +86,9 @@ Out[4]: ('0b1110', '1110')
 class bool([x]): 返回一个Boolean值，即True或False。x是使用标准的真实测试程序([truth testing procedure](https://docs.python.org/3.6/library/stdtypes.html#truth))进行转换的。
 假如x是false或被省去，这会返回False；否则它返回True。bool类是int的子类（查看[Numeric Types — int, float, complex](https://docs.python.org/3.6/library/stdtypes.html#typesnumeric)）。
 它永远不可以被继承。它的唯一实例是False和True（查看[Boolean Values](https://docs.python.org/3.6/library/stdtypes.html#bltin-boolean-values)）。
-```ipnbpython
-In[2]: bool() == bool(0) == False
-Out[2]: True
+```python
+>>> bool() == bool(0) == False
+True
 ```
 
 # bytearray
@@ -98,24 +98,24 @@ class bytearray([source[, encoding[, errors]]]): 返回一个新字节数组。b
 
 **可选的原始参数被用来以几种不同的方式初始化数组：**
 1. 假如它是一个字符串，你还必须给定编码 (以及可选的错误)参数；[bytearray()](https://docs.python.org/3.6/library/stdtypes.html#bytearray)此外使用[str.encode()](https://docs.python.org/3.6/library/stdtypes.html#str.encode)转换字符串为字节
-    ```ipnbpython
-    In[2]: bytearray('中国', encoding='utf8')
+    ```python
+    >>> bytearray('中国', encoding='utf8')
     bytearray(b'\xe4\xb8\xad\xe5\x9b\xbd')
-    In[3]: list(bytearray('中国', encoding='utf8'))
+    >>> list(bytearray('中国', encoding='utf8'))
     [228, 184, 173, 229, 155, 189]
-    In[4]: str.encode('中国')
+    >>> str.encode('中国')
     b'\xe4\xb8\xad\xe5\x9b\xbd'
     ```
 2. 假如它是一个整数，数组会有这么大的尺寸，并将被用null bytes初始化。
-    ```ipnbpython
-    In[2]: bytearray(4)
-    Out[2]: bytearray(b'\x00\x00\x00\x00')
+    ```python
+    >>> bytearray(4)
+    bytearray(b'\x00\x00\x00\x00')
     ```
 3. 假如它是一个符合缓冲区接口的对象，一个只读的缓冲区对象将被用来初始化字节数组。
 4. 假如它是一个可迭代对象，它必须是一个整数的可迭代器，整数在 0 <= x < 256 的范围中，它被用作数组的初始内容。
-    ```ipnbpython
-    In[2]: bytearray([1,2,3,4])
-    Out[2]: bytearray(b'\x01\x02\x03\x04')
+    ```python
+    >>> bytearray([1,2,3,4])
+    bytearray(b'\x01\x02\x03\x04')
     ```
 
 在没有参数的情况下，创建了大小为0的数组。
@@ -226,7 +226,7 @@ dir([object]): 没有参数时，返回当前本地作用域内的名字列表�
 + 另外，列表包含对象的属性名字，它类属性的名字，和它类的基础类进行递归。
 
 最终列表是按字母顺序排列的。例如：
-```
+```python
 >>> import struct
 >>> import math
 >>> len(dir())
@@ -260,7 +260,7 @@ divmod(a, b): 以2个数字（非复数）作为参数，当使用整数除法�
 enumerate(iterable, start=0): 返回一个enumerate对象。iterable必须是一个序列，一个[iterator](https://docs.python.org/3.6/glossary.html#term-iterator)或一些其他支持迭代的对象。
 
 由enumerate()返回的迭代对象的__next__方法返回一个元组，它包含一个计数（默认0开始）和从迭代迭代器获得的值。
-```
+```python
 >>> seasons = ['Spring', 'Summer', 'Fall', 'Winter']
 >>> list(enumerate(seasons))
 [(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]
@@ -281,7 +281,7 @@ eval(expression, globals=None, locals=None): 参数是一个字符串和可选�
 
 expression参数被解析和评估为Python表达式（从技术上讲，一个条件列表）进行评估，它使用globals和locals字典作为全局和本地命名空间。假如globals参数存在，且不包含键`__builtins__`的值，在表达式被解析之前，对内置模块[builtins](https://docs.python.org/3.6/library/builtins.html#module-builtins)的引用被插入到那个键下。
 这意味着表达式通常可以完全访问到标准builtins模块，且受限的环境中传播。假如locals字典被省略，它默认是globals字典。假如两个字典都被省略，表达式在调用eval()的环境中被执行。返回值时评估的表达式的结果。语法错误被报告为异常，例如：
-```
+```python
 >>> x = 1
 >>> eval('x+1')
 2
@@ -552,8 +552,8 @@ True
 # iter
 iter(object[, sentinel]): 返回一个[iterator](https://docs.python.org/3.6/glossary.html#term-iterator)对象。
 
-第一个参数的解释非常不同，这取决于第二个参数的存在。如果没有第二个参数，object必须是一个collection对象，它支持迭代协议（ __iter__()方法），或者它必须支持序列协议（__getitem__()方法，用从0开始的整数参数）。如果它不支持任何一种协议，产生TypeError。  
-如果给出第二个参数sentinel，object必须是一个可调用对象。在这种情况下创建的迭代器将无参调用object，每次调用它的__next__()方法；如果返回的值等于sentinel，[StopIteration](https://docs.python.org/3.6/library/exceptions.html#StopIteration)将被抛出，否则返回的值将被返回。
+第一个参数的解释非常不同，这取决于第二个参数的存在。如果没有第二个参数，object必须是一个collection对象，它支持迭代协议（[\_\_iter__()](https://docs.python.org/3.6/reference/datamodel.html#object.__iter__)方法），或者它必须支持序列协议（[\_\_getitem__()](https://docs.python.org/3.6/reference/datamodel.html#object.__getitem__)方法，用从0开始的整数参数）。如果它不支持任何一种协议，产生TypeError。  
+如果给出第二个参数sentinel，object必须是一个可调用对象。在这种情况下创建的迭代器将无参调用object，每次调用它的[\_\_next__()](https://docs.python.org/3.6/library/stdtypes.html#iterator.__next__)方法；如果返回的值等于sentinel，[StopIteration](https://docs.python.org/3.6/library/exceptions.html#StopIteration)将被抛出，否则返回的值将被返回。
 
 See also [Iterator Types](https://docs.python.org/3.6/library/stdtypes.html#typeiter).
 
@@ -941,4 +941,158 @@ start默认是0。iterable的项通常是数字，start值不允许是字符串�
 对于某些用例来说，sum()有很好的替代方法。连接字符串序列的首选、快速方法是通过调用`''.join(sequence)`。为了增加浮点值的精度，查看[math.fsum()](https://docs.python.org/3.6/library/math.html#math.fsum)。要连接一系列的iterables，可以考虑使用[itertools.chain()](https://docs.python.org/3.6/library/itertools.html#itertools.chain)。
 
 # super
-super([type[, object-or-type]]): 
+super([type[, object-or-type]]): 返回一个代理对象，它将方法调用委托给type的父类或同级类型的类。这对于访问已经在类上被覆盖的继承方法非常有用。搜索顺序与与`getattr()`所使用的顺序相同，除了type本身被跳过。
+
+type的[\_\_mro__](https://docs.python.org/3.6/library/stdtypes.html#class.__mro__)属性列出getattr()和super()两者都使用的方法解析搜索顺序。属性是动态的，无论何时继承层次结构更新，属性就会改变。
+
+如果第二个参数被省略，返回的super对象是未绑定的。假如第二个参数是一个对象，`isinstance(obj, type)`一定是`True`。如果第二个参数是一个类型，`issubclass(type2, type)`一定是`True`（这通常用于类方法）。
+
+有2个典型的super使用案例。在一个单继承层次结构的类中，super可以被用来引用父类而不需要明确地命名它们，因此使代码更易于维护。这种用法与super在其他编程语言中的用法有密切的相似之处。
+
+第二个使用案例是在一个动态执行环境中支持合作多重继承。这个使用案例是Python独有的，在静态编译语言和只支持单继承的语言中，它也没有被发现。这使得实现多个基类实现相同方法的“钻石图”成为可能。好的设计要求这种方法在每种情况下都有相同的调用签名（因为运行时调用的顺序是确定的，因为这个顺序可以适应类层次结构的变化，因为这个顺序会包括在运行之前未知的兄弟类）。
+
+对于两个使用案例，一个典型的父类调用看起来像这样：
+```python
+class C(B):
+    def method(self, arg):
+        super().method(arg)    # This does the same thing as:
+                               # super(C, self).method(arg)
+```
+**注意** super()是作为绑定过程的一部分实现的，用于显式点状属性查找，如`super().__getitem__(name)`。：它通过实现自己的[\_\_getattribute__()](https://docs.python.org/3.6/reference/datamodel.html#object.__getattribute__)方法，以可预测的顺序搜索类，以支持合作多重继承。于是，super()未定义使用诸如`super()[name]`的语句或操作符来隐式查找。
+
+还要注意的是，除了零参数形式之外，super()并不局限于内部方法。这两个参数形式精确地指定了参数并给出了适当的引用。零参数形式只适用于类定义，当编译器填入必要的细节以正确地检索被定义的类时，以及访问普通方法的当前实例。
+
+For practical suggestions on how to design cooperative classes using super(), see [guide to using super()](https://rhettinger.wordpress.com/2011/05/26/super-considered-super/).
+
+# tuple
+tuple([iterable]): 元组不是一个函数，而是一个不可变的序列类型，as documented in [Tuples](https://docs.python.org/3.6/library/stdtypes.html#typesseq-tuple) and [Sequence Types — list, tuple, range](https://docs.python.org/3.6/library/stdtypes.html#typesseq).
+
+# type
+- class type(object)
+- class type(name, bases, dict)
+
+
+有了一个参数，返回object的类型。返回值是一个类型对象，通常是由[object.\_\_class__](https://docs.python.org/3.6/library/stdtypes.html#instance.__class__)返回的同一个对象。
+```python
+>>> type(1)
+<class 'int'>
+>>> a = type(1)
+>>> a
+<class 'int'>
+>>> a()
+0
+>>> class A:
+...     def __init__(self):
+...         self.a = 1
+... 
+>>> type(A)
+<class 'type'>
+>>> type(A())
+<class 'A'>
+>>> type(A())()
+<A object at 0x0000020C5B2B8EF0>
+>>> type(A())().a
+1
+```
+
+内置函数`isinstance()`被推荐用于测试对象的类型，因为它考虑了子类。
+
+有了三个参数，返回一个新的object类型。这本质上是[class](https://docs.python.org/3.6/reference/compound_stmts.html#class)语句的动态形式。name字符串是类名，它变成__name__属性；bases元组列出基类并成为“[\_\_bases__](https://docs.python.org/3.6/library/stdtypes.html#class.__bases__)”属性;；dict字典是包含类主体定义的命名空间，它被复制到标准字典中，成为了“[\_\_dict__](https://docs.python.org/3.6/library/stdtypes.html#object.__dict__)”属性。
+
+例如，下面两个语句创建相同类型的对象：
+```python
+>>> class X:
+...     a = 1
+...
+>>> X = type('X', (object,), dict(a=1))
+```
+See also [Type Objects](https://docs.python.org/3.6/library/stdtypes.html#bltin-type-objects).
+
+Changed in version 3.6: Subclasses of type which don’t override `type.\_new__` may no longer use the one-argument form to get the type of an object.
+
+# vars
+vars([object]): 返回一个模块、类、实例或其他有__dict__属性的对象的[\_\_dict__](https://docs.python.org/3.6/library/stdtypes.html#object.__dict__)属性。
+
+诸如模块和实例的对象有一个可更新的__dict__属性；但是，其他对象可能对其__dict__属性有写限制（例如，类使用[types.MappingProxyType](https://docs.python.org/3.6/library/types.html#types.MappingProxyType)来阻止直接字典更新）。
+
+没有一个参数时，vars()就像locals()。注意，本地字典只对阅读有用，因为对本地字典的更新被忽略了。
+
+# zip
+zip(*iterables): 创建一个迭代器，它聚合来自每个迭代器的元素。
+
+返回元组的迭代器，第i-th元组包含来自每个参数序列或iterables的第i-th元素。当最短的输入迭代被耗尽时，迭代器停止。有了一个iterable参数，它就返回一个1元组的迭代器。在没有参数的情况下，它返回一个空迭代器。等价于:
+```python
+def zip(*iterables):
+    # zip('ABCD', 'xy') --> Ax By
+    sentinel = object()
+    iterators = [iter(it) for it in iterables]
+    while iterators:
+        result = []
+        for it in iterators:
+            elem = next(it, sentinel)
+            if elem is sentinel:
+                return
+            result.append(elem)
+        yield tuple(result)
+```
+迭代器的左到右评估顺序是有保证的。这使得使用`zip(*[iter(s)]*n)`将数据序列集中到n长组的习语成为可能。这会重复相同的迭代器n次，这样每个输出元组都有对迭代器的n次调用的结果。这就产生了将输入划分为n长的块的效果。
+```python
+>>> list(zip('ABCD', 'xy'))
+[('A', 'x'), ('B', 'y')]
+
+>>> list(zip([1,2,3]))
+[(1,), (2,), (3,)]
+>>> list(zip())
+[]
+>>> list(zip(*[range(4)]*4))
+[(1, 1, 1, 1), (2, 2, 2, 2), (3, 3, 3, 3), (4, 4, 4, 4)]
+```
+zip()应该只使用不同长度的输入，当你不关心尾部来自较长的迭代器的不匹配的值时。如果这些值是重要的，使用[itertools.zip_longest()](https://docs.python.org/3.6/library/itertools.html#itertools.zip_longest)代替。
+
+zip()与“*”操作符一起使用可用于解压缩列表：
+```python
+>>> x = [1, 2, 3]
+>>> y = [4, 5, 6]
+>>> zipped = zip(x, y)
+>>> list(zipped)
+[(1, 4), (2, 5), (3, 6)]
+>>> x2, y2 = zip(*zip(x, y))
+>>> x == list(x2) and y == list(y2)
+True
+```
+
+# \_\_import__
+
+\_\_import__(name, globals=None, locals=None, fromlist=(), level=0)
+
+> **注意** 这是一个高级功能，在日常的Python编程中是不需要的，不像 [`importlib.import_module()`](https://docs.python.org/3.6/library/importlib.html#importlib.import_module)。
+
+这个函数由[import](https://docs.python.org/3.6/reference/simple_stmts.html#import)语句调用。为了改变import语句的语义，它可能被替换（通过导入[builtins](https://docs.python.org/3.6/library/builtins.html#module-builtins)模块并分配给`builtins.__import__`），但是这样做是非常地不鼓励的，因为使用导入钩子（查看[PEP 302](https://www.python.org/dev/peps/pep-0302)）达到相同目的通常是更简单的，并且不会导致代码的问题，因为代码假定默认的导入实现正在使用中。直接使用__import__()也是不鼓励的，赞成使用`importlib.import_module()`。
+
+函数导入模块name，潜在地使用给定的globals和locals来决定如何在包上下文中解释名称。fromlist 给出对象或子模块的名称，它们应该从给定name的模块中导入。标准的实现根本不使用它的locals参数，并且只使用它的globals来确定导入语句的包上下文。
+
+level指定是否使用绝对或相对导入。`0（默认值）`意味着只执行绝对导入。level的正值表示相对于调用__import__()的模块目录的父目录的数量（详情请参阅[PEP 328](https://www.python.org/dev/peps/pep-0328)）。
+
+当name变量是`package.module`的形式时，通常，最顶级的包（直到第一个点的名字）被返回，不是以name命名的模块。然而，当给出一个非空的fromlist参数时，将返回由name命名的模块。
+
+例如，`import spam`语句会产生类似以下代码的字节码：
+```python
+spam = __import__('spam', globals(), locals(), [], 0)
+```
+`import spam.ham`语句的结果是：
+```python
+spam = __import__('spam.ham', globals(), locals(), [], 0)
+```
+请注意__import__()如何返回toplevel模块，因为这是被import语句绑定到名称的对象。
+
+另一方面，`from spam.ham import eggs, sausage as saus`语句导致：
+```python
+_temp = __import__('spam.ham', globals(), locals(), ['eggs', 'sausage'], 0)
+eggs = _temp.eggs
+saus = _temp.sausage
+```
+这里的`spam.ham`模块是从__import__()返回的。从这个对象中，检索到进口的名称并分配给它们各自的名称。
+
+如果您只是想通过名称导入一个模块（可能在一个包中），使用 [importlib.import_module()](https://docs.python.org/3.6/library/importlib.html#importlib.import_module)。
+
+Changed in version 3.3: Negative values for level are no longer supported (which also changes the default value to 0).
