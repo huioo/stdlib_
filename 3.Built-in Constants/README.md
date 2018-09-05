@@ -42,8 +42,8 @@ SyntaxError: can't assign to keyword
 ## quit
 quit(code=None)
 
-## quit
-quit(code=None)
+## exit
+exit(code=None)
 
 对象被打印时，打印一个信息，像“Use quit() or Ctrl-D (i.e. EOF) to exit”，当被调用时，用特别的退出代码产生[SystemExit](https://docs.python.org/3.6/library/exceptions.html#SystemExit)。
 
@@ -54,3 +54,62 @@ quit(code=None)
 
 ## license
 对象被打印时，打印“Type license() to see the full license text”信息，当被调用时，以类似于pager的方式显示完整的许可文本（一次一个屏幕）
+
+```python
+Python 3.6.5 (v3.6.5:f59c0932b4, Mar 28 2018, 17:00:18) [MSC v.1900 64 bit (AMD64)] on win32
+>>> print(exit)
+Use exit() or Ctrl-Z plus Return to exit
+>>> print(quit)
+Use quit() or Ctrl-Z plus Return to exit
+>>> print(license)
+Type license() to see the full license text
+>>> print(credits)
+    Thanks to CWI, CNRI, BeOpen.com, Zope Corporation and a cast of thousands
+    for supporting Python development.  See www.python.org for more information.
+>>> print(copyright)
+Copyright (c) 2001-2018 Python Software Foundation.
+All Rights Reserved.
+
+Copyright (c) 2000 BeOpen.com.
+All Rights Reserved.
+
+... ...
+>>> print(quit)
+Use quit() or Ctrl-Z plus Return to exit
+```
+
+```python
+>>> license()
+A. HISTORY OF THE SOFTWARE
+==========================
+
+Python was created in the early 1990s by Guido van Rossum at Stichting
+Mathematisch Centrum (CWI, see http://www.cwi.nl) in the Netherlands
+as a successor of a language called ABC.  Guido remains Python's
+principal author, although it includes many contributions from others.
+
+In 1995, Guido continued his work on Python at the Corporation for
+National Research Initiatives (CNRI, see http://www.cnri.reston.va.us)
+
+... ...
+
+Hit Return for more, or q (and Return) to quit: >? q
+>>> credits
+    Thanks to CWI, CNRI, BeOpen.com, Zope Corporation and a cast of thousands
+    for supporting Python development.  See www.python.org for more information.
+>>> credits()
+    Thanks to CWI, CNRI, BeOpen.com, Zope Corporation and a cast of thousands
+    for supporting Python development.  See www.python.org for more information.
+>>> copyright()
+Copyright (c) 2001-2018 Python Software Foundation.
+All Rights Reserved.
+
+Copyright (c) 2000 BeOpen.com.
+All Rights Reserved.
+
+... ...
+>>> quit()
+
+Process finished with exit code 0
+
+```
